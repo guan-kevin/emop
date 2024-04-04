@@ -133,14 +133,6 @@ Title: [Techniques for Evolution-Aware Runtime Verification](https://www.cs.corn
 Authors: Owolabi Legunsen, Yi Zhang, Milica Hadzi-Tanovic, Grigore Rosu, Darko Marinov
 
 ```bibtex
-@inproceedings{LegunsenETALeMOPICST2019,
-  author =       {Legunsen, Owolabi and Zhang, Yi and Hadzi-Tanovic, Milica
-                  and Rosu, Grigore and Marinov, Darko},
-  title =        {Techniques for Evolution-Aware Runtime Verification},
-  booktitle =    {ICST},
-  year =         {2019},
-  pages =        {300-311}
-}
 @inproceedings{yorihiro2023emop,
   author =       {Yorihiro, Ayaka and Jiang, Pengyue and Marqu{\'e}s, Valeria
                  and Carleton, Benjamin and Legunsen, Owolabi},
@@ -149,5 +141,13 @@ Authors: Owolabi Legunsen, Yi Zhang, Milica Hadzi-Tanovic, Grigore Rosu, Darko M
   year =         {2023},
   pages =        {363-375},
   organization = {Springer}
+}
+@inproceedings{LegunsenETALeMOPICST2019,
+  author =       {Legunsen, Owolabi and Zhang, Yi and Hadzi-Tanovic, Milica
+                  and Rosu, Grigore and Marinov, Darko},
+  title =        {Techniques for Evolution-Aware Runtime Verification},
+  booktitle =    {ICST},
+  year =         {2019},
+  pages =        {300-311}
 }
 ```
