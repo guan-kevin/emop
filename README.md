@@ -136,7 +136,7 @@ Authors: Ayaka Yorihiro, Pengyue Jiang, Valeria Marqués, Benjamin Carleton, Owo
 @inproceedings{YorihiroEtAlRV2023,
   author =       {Yorihiro, Ayaka and Jiang, Pengyue and Marqu{\'e}s, Valeria
                  and Carleton, Benjamin and Legunsen, Owolabi},
-  title =        {eMOP: A Maven Plugin for Evolution-Aware Runtime Verification},
+  title =        {{eMOP: A Maven Plugin for Evolution-Aware Runtime Verification}},
   booktitle =    {RV},
   year =         {2023},
   pages =        {363-375}
