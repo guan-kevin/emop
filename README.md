@@ -141,4 +141,13 @@ Authors: Owolabi Legunsen, Yi Zhang, Milica Hadzi-Tanovic, Grigore Rosu, Darko M
   year =         {2019},
   pages =        {300-311}
 }
+@inproceedings{yorihiro2023emop,
+  author =       {Yorihiro, Ayaka and Jiang, Pengyue and Marqu{\'e}s, Valeria
+                 and Carleton, Benjamin and Legunsen, Owolabi},
+  title =        {eMOP: A Maven Plugin for Evolution-Aware Runtime Verification},
+  booktitle =    {RV},
+  year =         {2023},
+  pages =        {363-375},
+  organization = {Springer}
+}
 ```
