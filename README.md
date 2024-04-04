@@ -133,14 +133,13 @@ Title: [Techniques for Evolution-Aware Runtime Verification](https://www.cs.corn
 Authors: Owolabi Legunsen, Yi Zhang, Milica Hadzi-Tanovic, Grigore Rosu, Darko Marinov
 
 ```bibtex
-@inproceedings{yorihiro2023emop,
+@inproceedings{YorihiroEtAlRV2023,
   author =       {Yorihiro, Ayaka and Jiang, Pengyue and Marqu{\'e}s, Valeria
                  and Carleton, Benjamin and Legunsen, Owolabi},
   title =        {eMOP: A Maven Plugin for Evolution-Aware Runtime Verification},
   booktitle =    {RV},
   year =         {2023},
-  pages =        {363-375},
-  organization = {Springer}
+  pages =        {363-375}
 }
 @inproceedings{LegunsenETALeMOPICST2019,
   author =       {Legunsen, Owolabi and Zhang, Yi and Hadzi-Tanovic, Milica
