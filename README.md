@@ -128,9 +128,9 @@ Invoke various eMOP goals with the following commands:
 
 ## Citation
 
-Title: [Techniques for Evolution-Aware Runtime Verification](https://www.cs.cornell.edu/~legunsen/pubs/LegunsenETAL19eMOP.pdf)
+Title: [eMOP: A Maven Plugin for Evolution-Aware Runtime Verification](https://www.cs.cornell.edu/~legunsen/pubs/YorihiroETAleMOPRV23.pdf)
 
-Authors: Owolabi Legunsen, Yi Zhang, Milica Hadzi-Tanovic, Grigore Rosu, Darko Marinov
+Authors: Ayaka Yorihiro, Pengyue Jiang, Valeria Marqués, Benjamin Carleton, Owolabi Legunsen
 
 ```bibtex
 @inproceedings{YorihiroEtAlRV2023,
@@ -141,6 +141,13 @@ Authors: Owolabi Legunsen, Yi Zhang, Milica Hadzi-Tanovic, Grigore Rosu, Darko M
   year =         {2023},
   pages =        {363-375}
 }
+```
+
+Title: [Techniques for Evolution-Aware Runtime Verification](https://www.cs.cornell.edu/~legunsen/pubs/LegunsenETAL19eMOP.pdf)
+
+Authors: Owolabi Legunsen, Yi Zhang, Milica Hadzi-Tanovic, Grigore Rosu, Darko Marinov
+
+```bibtex
 @inproceedings{LegunsenETALeMOPICST2019,
   author =       {Legunsen, Owolabi and Zhang, Yi and Hadzi-Tanovic, Milica
                   and Rosu, Grigore and Marinov, Darko},
