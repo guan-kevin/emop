@@ -20,6 +20,22 @@
     </phases>
   </lifecycle>
   <lifecycle>
+    <id>rts</id>
+    <phases>
+      <phase>
+        <id>process-test-classes</id>
+        <executions>
+          <execution>
+            <goals>
+              <goal>monitor</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration/>
+      </phase>
+    </phases>
+  </lifecycle>
+  <lifecycle>
     <id>vms</id>
     <phases>
       <phase>
