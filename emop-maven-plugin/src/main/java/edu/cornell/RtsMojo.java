@@ -9,6 +9,7 @@ import org.apache.maven.plugin.BuildPluginManager;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugins.annotations.*;
 import org.apache.maven.project.MavenProject;
+import java.nio.file.*;
 
 @Mojo(name = "rts", requiresDirectInvocation = true, requiresDependencyResolution = ResolutionScope.TEST)
 @Execute(phase = LifecyclePhase.PROCESS_TEST_CLASSES, lifecycle = "rts")
@@ -18,10 +19,10 @@ public class RtsMojo extends MonitorMojo {
     private String tool;
 
     @Parameter(defaultValue = "${project}", readonly = true, required = true)
-    private MavenProject mavenProject;
+    private MavenProject myMavenProject;
 
     @Parameter(defaultValue = "${session}", readonly = true)
-    private MavenSession session;
+    private MavenSession mySession;
 
     @Component
     private BuildPluginManager manager;
@@ -29,6 +30,19 @@ public class RtsMojo extends MonitorMojo {
     public void execute() throws MojoExecutionException {
         getLog().info("[eMOP] Invoking the RPS Mojo with RTS...");
         System.setProperty("exiting-rps", "false");
+
+        Path startsDir = Paths.get(".starts");
+        Path starts = Paths.get(".starts-starts");
+        Path emop = Paths.get(".starts-emop");
+
+        try {
+            if (Files.exists(starts)) {
+                Files.move(startsDir, emop);
+                Files.move(starts, startsDir);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         long startRTS = System.currentTimeMillis();
         if (tool.equals("starts")) {
@@ -38,8 +52,8 @@ public class RtsMojo extends MonitorMojo {
                     goal("run"),
                     configuration(),
                     executionEnvironment(
-                            mavenProject,
-                            session,
+                            myMavenProject,
+                            mySession,
                             manager
                     )
             );
@@ -50,8 +64,8 @@ public class RtsMojo extends MonitorMojo {
                     goal("select"),
                     configuration(),
                     executionEnvironment(
-                            mavenProject,
-                            session,
+                            myMavenProject,
+                            mySession,
                             manager
                     )
             );
@@ -73,11 +87,18 @@ public class RtsMojo extends MonitorMojo {
                 goal("test"),
                 configuration(),
                 executionEnvironment(
-                        mavenProject,
-                        session,
+                        myMavenProject,
+                        mySession,
                         manager
                 )
         );
+
+        try {
+            Files.move(startsDir, starts);
+            Files.move(emop, startsDir);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         getLog().info("Finish running test in: " + (System.currentTimeMillis() - startTest) + " ms");
         getLog().info("Finish running RTS in: " + (System.currentTimeMillis() - startRTS) + " ms");
