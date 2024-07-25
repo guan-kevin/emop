@@ -81,6 +81,7 @@ public class RtsMojo extends MonitorMojo {
         getLog().info("Start running test");
 
         // TODO: Add agent?
+        String argLine = System.getenv("MOP_AGENT_PATH") == null ? "" : System.getenv("MOP_AGENT_PATH");
         executeMojo(
                 plugin(
                         groupId("org.apache.maven.plugins"),
@@ -88,7 +89,9 @@ public class RtsMojo extends MonitorMojo {
                         version(System.getenv("SUREFIRE_VERSION") != null ? System.getenv("SUREFIRE_VERSION") : "3.1.2")
                 ),
                 goal("test"),
-                configuration(),
+                configuration(
+                    element(name("argLine"), argLine)
+                ),
                 executionEnvironment(
                         myMavenProject,
                         mySession,
