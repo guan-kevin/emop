@@ -12,7 +12,7 @@ import org.apache.maven.project.MavenProject;
 
 @Mojo(name = "rts", requiresDirectInvocation = true, requiresDependencyResolution = ResolutionScope.TEST)
 @Execute(phase = LifecyclePhase.PROCESS_TEST_CLASSES, lifecycle = "rts")
-public class RpsMojo extends MonitorMojo {
+public class RtsMojo extends MonitorMojo {
 
     @Parameter(property = "tool", defaultValue = "starts")
     private String tool;
@@ -59,7 +59,7 @@ public class RpsMojo extends MonitorMojo {
             throw new MojoExecutionException("Unknown RTS tool " + tool + ", currently only supports starts & ekstazi");
         }
 
-        getLog().info("Finish selecting test with RTS in: " + (System.currentTimeMillis() - start) + " ms");
+        getLog().info("Finish selecting test with RTS in: " + (System.currentTimeMillis() - startRTS) + " ms");
         long startTest = System.currentTimeMillis();
         getLog().info("Start running test");
 
