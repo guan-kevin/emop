@@ -18,7 +18,7 @@ public class RtsMojo extends MonitorMojo {
     private String tool;
 
     @Parameter(defaultValue = "${project}", readonly = true, required = true)
-    private MavenProject project;
+    private MavenProject mavenProject;
 
     @Parameter(defaultValue = "${session}", readonly = true)
     private MavenSession session;
@@ -38,7 +38,7 @@ public class RtsMojo extends MonitorMojo {
                     goal("run"),
                     configuration(),
                     executionEnvironment(
-                            project,
+                            mavenProject,
                             session,
                             manager
                     )
@@ -50,7 +50,7 @@ public class RtsMojo extends MonitorMojo {
                     goal("select"),
                     configuration(),
                     executionEnvironment(
-                            project,
+                            mavenProject,
                             session,
                             manager
                     )
@@ -73,7 +73,7 @@ public class RtsMojo extends MonitorMojo {
                 goal("test"),
                 configuration(),
                 executionEnvironment(
-                        project,
+                        mavenProject,
                         session,
                         manager
                 )
