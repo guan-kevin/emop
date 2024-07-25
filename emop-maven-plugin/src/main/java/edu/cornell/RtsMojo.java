@@ -36,7 +36,10 @@ public class RtsMojo extends MonitorMojo {
         Path emop = Paths.get(".starts-emop");
 
         try {
-            Files.move(startsDir, emop);
+            if (Files.exists(startsDir)) {
+                Files.move(startsDir, emop);
+            }
+
             if (Files.exists(starts)) {
                 Files.move(starts, startsDir);
             }
@@ -94,8 +97,12 @@ public class RtsMojo extends MonitorMojo {
         );
 
         try {
-            Files.move(startsDir, starts);
-            Files.move(emop, startsDir);
+            if (Files.exists(startsDir)) {
+                Files.move(startsDir, starts);
+            }
+            if (Files.exists(emop)) {
+                Files.move(emop, startsDir);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
