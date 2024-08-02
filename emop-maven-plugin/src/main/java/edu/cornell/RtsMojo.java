@@ -35,16 +35,18 @@ public class RtsMojo extends MonitorMojo {
         Path starts = Paths.get(".starts-starts");
         Path emop = Paths.get(".starts-emop");
 
-        try {
-            if (Files.exists(startsDir)) {
-                Files.move(startsDir, emop);
-            }
+        if (tool.equals("starts")) {
+            try {
+                if (Files.exists(startsDir)) {
+                    Files.move(startsDir, emop);
+                }
 
-            if (Files.exists(starts)) {
-                Files.move(starts, startsDir);
+                if (Files.exists(starts)) {
+                    Files.move(starts, startsDir);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
 
         long startRTS = System.currentTimeMillis();
@@ -99,15 +101,17 @@ public class RtsMojo extends MonitorMojo {
                 )
         );
 
-        try {
-            if (Files.exists(startsDir)) {
-                Files.move(startsDir, starts);
+        if (tool.equals("starts")) {
+            try {
+                if (Files.exists(startsDir)) {
+                    Files.move(startsDir, starts);
+                }
+                if (Files.exists(emop)) {
+                    Files.move(emop, startsDir);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-            if (Files.exists(emop)) {
-                Files.move(emop, startsDir);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
 
         getLog().info("Finish running test in: " + (System.currentTimeMillis() - startTest) + " ms");
